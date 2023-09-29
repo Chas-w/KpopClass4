@@ -6,7 +6,9 @@ public class player2Attack : MonoBehaviour
 {
     [SerializeField] playerHealth player1Health;
     [SerializeField] int damage;
-    //[SerializeField] Collision2D player1Collision;
+
+    float knockBack = 5f;
+    float bounce = 10f;
 
     // Start is called before the first frame update
     void Start()

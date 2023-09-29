@@ -11,19 +11,17 @@ public class playerControl : MonoBehaviour
     public float jumpPower = 2f;
     public float gravScale = 5f;
     public float gravFall = 40f;
+    public float moveSpeed;
 
-   
+    public bool dirRight;
+
     float horizontalMove;
-    float moveSpeed;
  
     //float hitCoolDownMax = 5f;
     //float hitCoolDown;
 
     bool grounded = false;
     bool jump = false;
-
-    
-    bool dirRight;
 
     Rigidbody2D myBody;
     Animator myAnim;

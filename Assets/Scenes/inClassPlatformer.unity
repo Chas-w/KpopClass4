@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1Health: {fileID: 1497335332}
-  damage: 2
+  damage: 1
 --- !u!114 &1024177902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +847,8 @@ MonoBehaviour:
   jumpPower: 12
   gravScale: 5
   gravFall: 20
+  moveSpeed: 0
+  dirRight: 0
 --- !u!50 &1497335326
 Rigidbody2D:
   serializedVersion: 4
@@ -1035,7 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player2Health: {fileID: 1024177902}
-  damage: 2
+  damage: 1
 --- !u!1 &1613695238
 GameObject:
   m_ObjectHideFlags: 0
