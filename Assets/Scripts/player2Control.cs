@@ -4,40 +4,72 @@ using UnityEngine;
 
 public class player2Control : MonoBehaviour
 {
+    [SerializeField] Transform player1Position;
+
     public float speed = 5f;
     public float castDist = 1f;
     public float jumpPower = 2f;
     public float gravScale = 5f;
     public float gravFall = 40f;
-
+ 
     float horizontalMove;
 
     bool grounded = false;
     bool jump = false;
+    bool dirRight;
 
     Rigidbody2D myBody;
     // Start is called before the first frame update
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>(); //assigns rigid body to this variable
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(p2_attacking);
+        #region movement
         horizontalMove = Input.GetAxis("Horizontal2");
 
         if (Input.GetButtonDown("Jump2") && grounded)
         {
             jump = true;
         }
+
+
+        if (horizontalMove > 0f)
+        {
+            dirRight = true;
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (horizontalMove < 0f)
+        {
+            dirRight = false;
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (horizontalMove == 0f)
+        {
+            if (player1Position.position.x > transform.position.x)
+            {
+                dirRight = true;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (player1Position.position.x < transform.position.x)
+            {
+                dirRight = false;
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+        }
+        #endregion
+
     }
 
     void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
     {
+        #region movement
         float moveSpeed = horizontalMove * speed;
-
-        #region jump
 
         if (jump)
         {

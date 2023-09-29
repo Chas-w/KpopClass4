@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.5145588
+  orthographic size: 3.5163443
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -395,9 +395,11 @@ GameObject:
   - component: {fileID: 1024177895}
   - component: {fileID: 1024177899}
   - component: {fileID: 1024177900}
+  - component: {fileID: 1024177901}
+  - component: {fileID: 1024177902}
   m_Layer: 2
   m_Name: player2
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -528,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b73bb902f45b94f95d59967a2a0075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Position: {fileID: 1497335329}
   speed: 5
   castDist: 1
   jumpPower: 12
@@ -559,6 +562,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 0.91}
   m_EdgeRadius: 0
+--- !u!114 &1024177901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024177894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f324105934414354c9e5391d0843bef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Health: {fileID: 1497335332}
+  damage: 2
+--- !u!114 &1024177902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024177894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f84fac03b50abb46b5d67e7796bac8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 10
 --- !u!1 &1187087975
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +820,8 @@ GameObject:
   - component: {fileID: 1497335325}
   - component: {fileID: 1497335330}
   - component: {fileID: 1497335331}
+  - component: {fileID: 1497335332}
+  - component: {fileID: 1497335333}
   m_Layer: 2
   m_Name: player
   m_TagString: Player
@@ -808,6 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afda28083a7a919409aacc674c36a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player2Position: {fileID: 1024177898}
   speed: 5
   castDist: 1
   jumpPower: 12
@@ -974,6 +1008,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 0.93}
   m_EdgeRadius: 0
+--- !u!114 &1497335332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527a33acf04788d4596d0d555374c4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 10
+--- !u!114 &1497335333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb4078639fc034e4caba312a83756d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player2Health: {fileID: 1024177902}
+  damage: 2
 --- !u!1 &1613695238
 GameObject:
   m_ObjectHideFlags: 0

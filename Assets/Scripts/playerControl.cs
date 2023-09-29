@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class playerControl : MonoBehaviour
 {
+    [SerializeField] Transform player2Position;
+
     public float speed = 5f;
     public float castDist = 1f;
     public float jumpPower = 2f;
     public float gravScale = 5f;
     public float gravFall = 40f;
 
+   
     float horizontalMove;
+    float moveSpeed;
+ 
+    //float hitCoolDownMax = 5f;
+    //float hitCoolDown;
 
     bool grounded = false;
     bool jump = false;
+
+    
+    bool dirRight;
 
     Rigidbody2D myBody;
     Animator myAnim;
@@ -22,10 +32,14 @@ public class playerControl : MonoBehaviour
     {
         myBody = GetComponent<Rigidbody2D>(); //assigns rigid body to this variable
         myAnim = GetComponent<Animator>();
+
+        //hitCoolDown = hitCoolDownMax;
     }
+
 
     void Update() //use update for things that need an instant response
     {
+        #region movement
         horizontalMove = Input.GetAxis("Horizontal"); //is the input
 
         if (Input.GetButtonDown("Jump") && grounded)
@@ -42,24 +56,51 @@ public class playerControl : MonoBehaviour
         {
             myAnim.SetBool("running", false);
         }
+
+        if (horizontalMove > 0f)
+        {
+            dirRight = true;
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (horizontalMove < 0f)
+        {
+            dirRight = false;
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (horizontalMove == 0f)
+        {
+            if (player2Position.position.x > transform.position.x)
+            {
+                dirRight = true;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (player2Position.position.x < transform.position.x)
+            {
+                dirRight = false;
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+        }
+        #endregion
     }
 
     void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
     {
-        float moveSpeed = horizontalMove * speed;
 
-        #region jump
+        #region movement
+      
+        moveSpeed = horizontalMove * speed;
 
         if (jump)
         {
             myBody.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            jump = false; 
+            jump = false;
         }
 
         if (myBody.velocity.y >= 0f) //if the rigid body is going up
         {
             myBody.gravityScale = gravScale; //go up with this gravity scale
-        } else if (myBody.velocity.y <= 0f) //if it is going down
+        }
+        else if (myBody.velocity.y <= 0f) //if it is going down
         {
             myBody.gravityScale = gravFall; //fall with this gravity scale
         }
@@ -75,11 +116,10 @@ public class playerControl : MonoBehaviour
         }
         else
         {
-            grounded = false; 
+            grounded = false;
         }
-
-        #endregion 
-
         myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f);
+        
+        #endregion
     }
 }
