@@ -6,6 +6,8 @@ public class playerAttack : MonoBehaviour
 {
     [SerializeField] player2Health player2Health;
     [SerializeField] int damage;
+
+    bool touching;
     //[SerializeField] Collision2D player1Collision;
 
     // Start is called before the first frame update
@@ -16,23 +18,33 @@ public class playerAttack : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player2" && Input.GetButtonDown("Attack"))
+        if (collision.gameObject.tag == "Player2")
+        {
+            touching = true;
+            //player2Health.TakeDamage(damage);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player2")
         {
             //Debug.Log("touching");
             player2Health.TakeDamage(damage);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player2" && Input.GetButtonDown("Attack"))
+        if (collision.gameObject.tag == "Player2")
         {
-            //Debug.Log("touching");
-            player2Health.TakeDamage(damage);
+            touching = false;
         }
     }
     // Update is called once per fra
     void Update()
     {
-        //Debug.Log(attacking);
+        if (touching && Input.GetButtonDown("Attack"))
+        {
+            player2Health.TakeDamage(damage);
+        }
     }
 }
