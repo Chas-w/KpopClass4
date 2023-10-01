@@ -326,9 +326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f8cc23da6d8ff489710228f9377627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTimer: {fileID: 0}
-  p1Damage: {fileID: 0}
-  p2Damage: {fileID: 0}
+  levelTimer: {fileID: 2022602516}
+  p1Damage: {fileID: 1497335332}
+  p2Damage: {fileID: 1024177902}
 --- !u!4 &407892284
 Transform:
   m_ObjectHideFlags: 0
