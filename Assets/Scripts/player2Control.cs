@@ -76,18 +76,6 @@ public class player2Control : MonoBehaviour
 
         if (hit)
         {
-            /*
-            if (dirRight)
-            {
-                moveSpeed = -knockBack;
-            }
-            if (!dirRight)
-            {
-                moveSpeed = knockBack;
-            }
-            myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f);
-            */
-
             myBody.AddForce(Vector2.up * bounceSpeed, ForceMode2D.Impulse);
 
             hit = false;

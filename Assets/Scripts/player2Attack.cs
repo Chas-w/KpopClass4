@@ -31,7 +31,7 @@ public class player2Attack : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //Debug.Log("touching");
-            player1Health.TakeDamage(damage);
+            touching = true;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -44,7 +44,7 @@ public class player2Attack : MonoBehaviour
     // Update is called once per fra
     void Update()
     {
-        if (touching && Input.GetButtonDown("Attack2"))
+        if (touching && Input.GetButtonDown("Attack2") && player1Health.blocking == false)
         {
             player1Health.TakeDamage(damage);
         }
