@@ -7,11 +7,12 @@ public class timer : MonoBehaviour
 {
 
     [SerializeField] TMP_Text textComponenet;
-    [SerializeField] float startTime;
-
-    float currentTime;
+    
+    public float startTime;
+    public float currentTime;
     bool timerStarted = false;
 
+  
     void Start()
     {
         currentTime = startTime;
