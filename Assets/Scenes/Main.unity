@@ -524,7 +524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Children of God
+  m_text: DONNYBROOK!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5edd547e99cf8ce439c328f8144da663, type: 2}
   m_sharedMaterial: {fileID: -5871838944201986869, guid: 5edd547e99cf8ce439c328f8144da663, type: 2}
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 70.55
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -59,19 +59,15 @@ public class LevelManager : MonoBehaviour
             Debug.Log(p1WinCount);
             if (SceneManager.GetActiveScene().name == "inClassPlatformer") {SceneManager.LoadScene("LVL2");}
             else if (SceneManager.GetActiveScene().name == "LVL2") { SceneManager.LoadScene("LVL3"); }
-        }
-        
-        if (sceneCount >= 3)
+        } else if (SceneManager.GetActiveScene().name == "LVL3")
         {
-            if (p2WinCount > p1WinCount)
-            {   
-                SceneManager.LoadScene("Player2WinEnd");
-                Debug.Log("p2 Win");
-                Destroy(this);
-            }
-            else if (p1WinCount > p2WinCount) ;
+            if (p1WinCount > p2WinCount)
             {
                 SceneManager.LoadScene("Player1WinEnd");
+                Destroy(this);
+            } else if (p1WinCount < p2WinCount)
+            {
+                SceneManager.LoadScene("Player2WinEnd");
                 Destroy(this);
             }
         }
