@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponenet: {fileID: 0}
-  startTime: 85
+  startTime: 12
   currentTime: 0

@@ -7,6 +7,8 @@ public class playerAttack : MonoBehaviour
     [SerializeField] player2Health player2Health;
     [SerializeField] int damage;
 
+    public bool attacked;
+
     bool touching;
     //[SerializeField] Collision2D player1Collision;
 
@@ -45,6 +47,7 @@ public class playerAttack : MonoBehaviour
         if (touching && Input.GetButtonDown("Attack") && player2Health.blocking == false)
         {
             player2Health.TakeDamage(damage);
+            attacked = true;
         }
     }
 }

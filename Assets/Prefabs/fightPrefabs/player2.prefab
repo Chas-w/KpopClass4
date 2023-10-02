@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1Position: {fileID: 0}
+  p1Attack: {fileID: 0}
   speed: 5
   castDist: 1
   jumpPower: 12
@@ -195,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Health: {fileID: 0}
   damage: 1
+  attacked: 0
 --- !u!114 &3311671423146944394
 MonoBehaviour:
   m_ObjectHideFlags: 0

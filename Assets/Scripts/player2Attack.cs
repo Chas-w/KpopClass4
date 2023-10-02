@@ -7,6 +7,8 @@ public class player2Attack : MonoBehaviour
     [SerializeField] playerHealth player1Health;
     [SerializeField] int damage;
 
+    public bool attacked;
+
     float knockBack = 5f;
     float bounce = 10f;
 
@@ -47,6 +49,7 @@ public class player2Attack : MonoBehaviour
         if (touching && Input.GetButtonDown("Attack2") && player1Health.blocking == false)
         {
             player1Health.TakeDamage(damage);
+            attacked = true;
         }
     }
 

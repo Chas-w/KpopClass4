@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player2Position: {fileID: 0}
+  p2Attack: {fileID: 0}
   speed: 5
   castDist: 1
   jumpPower: 12
@@ -233,3 +234,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player2Health: {fileID: 0}
   damage: 1
+  attacked: 0

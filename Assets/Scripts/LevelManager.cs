@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] timer levelTimer;
-    [SerializeField] playerHealth p1Damage;
-    [SerializeField] player2Health p2Damage;
+    public GameObject UIManager;
+    public GameObject p1;
+    public GameObject p2;
+
+    public timer levelTimer;
+    public playerHealth p1Damage;
+    public player2Health p2Damage;
 
     public float p1WinCount;
     public float p2WinCount;
@@ -24,6 +29,16 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        UIManager = GameObject.Find("UI Manager");
+        p1 = GameObject.Find("player");
+        p2 = GameObject.Find("player2");
+
+        levelTimer = UIManager.GetComponent<timer>();
+        p1Damage = p1.GetComponent<playerHealth>();
+        p2Damage = p2.GetComponent<player2Health>();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {

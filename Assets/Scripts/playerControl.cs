@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerControl : MonoBehaviour
 {
     [SerializeField] Transform player2Position;
+    [SerializeField] player2Attack p2Attack;
 
     public float speed = 5f;
     public float castDist = 1f;
@@ -24,7 +25,7 @@ public class playerControl : MonoBehaviour
 
     bool grounded = false;
     bool jump = false;
-    bool hit;
+    //bool hit;
 
     Rigidbody2D myBody;
     Animator myAnim;
@@ -35,14 +36,6 @@ public class playerControl : MonoBehaviour
         myAnim = GetComponent<Animator>();
 
         //hitCoolDown = hitCoolDownMax;
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player2" && Input.GetButtonDown("Attack2"))
-        {
-            hit = true;
-        }
     }
 
     void Update() //use update for things that need an instant response
@@ -90,11 +83,11 @@ public class playerControl : MonoBehaviour
         }
         #endregion
 
-        if (hit)
+        if (p2Attack.attacked == true)
         {
             myBody.AddForce(Vector2.up * bounceSpeed, ForceMode2D.Impulse);
 
-            hit = false;
+            p2Attack.attacked = false;
         }
     }
 
@@ -102,40 +95,37 @@ public class playerControl : MonoBehaviour
     {
 
         #region movement
-        if (!hit)
-        { 
-            moveSpeed = horizontalMove * speed;
+        moveSpeed = horizontalMove * speed;
 
-            if (jump)
-            {
-                myBody.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-                jump = false;
-            }
-
-            if (myBody.velocity.y >= 0f) //if the rigid body is going up
-            {
-                myBody.gravityScale = gravScale; //go up with this gravity scale
-            }
-            else if (myBody.velocity.y <= 0f) //if it is going down
-            {
-                myBody.gravityScale = gravFall; //fall with this gravity scale
-            }
-
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, castDist); //holds the information from a raycast hit 
-
-            Debug.DrawRay(transform.position, Vector2.down * castDist, Color.blue);
-
-            if (hit.collider != null && hit.transform.tag == "Ground")
-            {
-                grounded = true;
-                myAnim.SetBool("jumping", false);
-            }
-            else
-            {
-                grounded = false;
-            }
-            myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f);
+        if (jump)
+        {
+            myBody.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            jump = false;
         }
+
+        if (myBody.velocity.y >= 0f) //if the rigid body is going up
+        {
+            myBody.gravityScale = gravScale; //go up with this gravity scale
+        }
+        else if (myBody.velocity.y <= 0f) //if it is going down
+        {
+            myBody.gravityScale = gravFall; //fall with this gravity scale
+        }
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, castDist); //holds the information from a raycast hit 
+
+        Debug.DrawRay(transform.position, Vector2.down * castDist, Color.blue);
+
+        if (hit.collider != null && hit.transform.tag == "Ground")
+        {
+            grounded = true;
+            myAnim.SetBool("jumping", false);
+        }
+        else
+        {
+            grounded = false;
+        }
+        myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f);
         #endregion
 
     }
