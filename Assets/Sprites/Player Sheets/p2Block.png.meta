@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b798ceb98c785d14f9736c1e16460abc
+guid: 177f235eb17b8a940a7366597f1f8214
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerIdle2-Sheet_0
+      name: player2Blocking-Sheet_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 9
         y: 0
-        width: 736
-        height: 640
+        width: 732
+        height: 760
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4cb89eb73f1a94499a79f1e9c9c68f5
-      internalID: -1045341500
+      spriteID: cc8cb5a34f2db224fb8e1940b609399a
+      internalID: -63215840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerIdle2-Sheet_1
+      name: player2Blocking-Sheet_1
       rect:
         serializedVersion: 2
-        x: 815
+        x: 1009
         y: 0
-        width: 738
-        height: 640
+        width: 732
+        height: 760
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fc438a2de8643942a213853a1579593
-      internalID: -1490067343
+      spriteID: 3c9cc0eb33d22e04f8bad8e167736145
+      internalID: 1026016953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerIdle2-Sheet_2
+      name: player2Blocking-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1628
+        x: 2009
         y: 0
-        width: 736
-        height: 640
+        width: 507
+        height: 760
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a544a7a41a0bd6439d79e6d48a1ced0
-      internalID: 128346921
+      spriteID: c11af6d1a84ec3d49b92f5fd9005192d
+      internalID: 1067874466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerIdle2-Sheet_3
+      name: player2Blocking-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2435
+        x: 3009
         y: 0
-        width: 738
-        height: 640
+        width: 363
+        height: 760
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,92 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63f3d6621aee4824bb64094415d69c4f
-      internalID: 137414617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerIdle2-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 3248
-        y: 0
-        width: 735
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43d78cb717af0e941a2281d07a227245
-      internalID: 2005866903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerIdle2-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 4055
-        y: 0
-        width: 738
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8ba266e143431742be777eec49db2cf
-      internalID: 360777513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerIdle2-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 4865
-        y: 0
-        width: 738
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f0e0577dd6d00b45adee4847d0d5c00
-      internalID: 1322551531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerIdle2-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 5675
-        y: 0
-        width: 738
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db97a05e62acdd54cab1d74e3f9f3045
-      internalID: -1980982304
+      spriteID: 775a50afaa66c7e47939950ab349ddce
+      internalID: 1181861193
       vertices: []
       indices: 
       edges: []
@@ -295,14 +211,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerIdle2-Sheet_0: -1045341500
-      playerIdle2-Sheet_1: -1490067343
-      playerIdle2-Sheet_2: 128346921
-      playerIdle2-Sheet_3: 137414617
-      playerIdle2-Sheet_4: 2005866903
-      playerIdle2-Sheet_5: 360777513
-      playerIdle2-Sheet_6: 1322551531
-      playerIdle2-Sheet_7: -1980982304
+      player2Blocking-Sheet_0: -63215840
+      player2Blocking-Sheet_1: 1026016953
+      player2Blocking-Sheet_2: 1067874466
+      player2Blocking-Sheet_3: -894843477
+      player2Blocking-Sheet_4: 1181861193
+      player2Blocking-Sheet_5: 57352152
+      player2Blocking-Sheet_6: -1199885800
+      player2Blocking-Sheet_7: -1341919522
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

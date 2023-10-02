@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 581ce5ecec5599346a513b72863a83d2
+guid: a0ed352bd380af047b16d7b794997924
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player1Attacking-Sheet_0
+      name: p1Idle_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 8
         y: 0
-        width: 738
-        height: 760
+        width: 735
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 533a9df5f86186d4bbff88032145af88
-      internalID: -62349589
+      spriteID: 1620f1379b2de764abf03b222836e9bd
+      internalID: 3952612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player1Attacking-Sheet_1
+      name: p1Idle_1
       rect:
         serializedVersion: 2
-        x: 1006
+        x: 818
         y: 0
-        width: 719
-        height: 760
+        width: 735
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e82b20a0222666540aa1cdaba577e059
-      internalID: -1680948210
+      spriteID: d352301846c64fe4c87b9048a55b459a
+      internalID: -547748085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player1Attacking-Sheet_2
+      name: p1Idle_2
       rect:
         serializedVersion: 2
-        x: 2006
+        x: 1628
         y: 0
-        width: 359
-        height: 760
+        width: 735
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eea18f7bfc6e7d74bb4447fff9226a5f
-      internalID: -417434695
+      spriteID: 5b5df6e00050ca34d8bf38d7cfe8106e
+      internalID: 339897292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player1Attacking-Sheet_3
+      name: p1Idle_3
       rect:
         serializedVersion: 2
-        x: 3006
+        x: 2438
         y: 0
-        width: 390
-        height: 760
+        width: 735
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1297bf9eb17b39f44b0cced5d7348c2b
-      internalID: 1307250431
+      spriteID: 46ddbafa01a89f34c9df37a20f907f43
+      internalID: 555518072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player1Attacking-Sheet_4
+      name: p1Idle_4
       rect:
         serializedVersion: 2
-        x: 4006
+        x: 3248
         y: 0
-        width: 390
-        height: 760
+        width: 735
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b63721a953d14e4ebb2e82dd931582d
-      internalID: 968008983
+      spriteID: e159a03376cf74e449a74f6a02ea28c0
+      internalID: -1545728379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player1Attacking-Sheet_5
+      name: p1Idle_5
       rect:
         serializedVersion: 2
-        x: 5124
+        x: 4058
         y: 0
-        width: 730
-        height: 760
+        width: 735
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae0c6fe84539bc746bbd4fbbf482d34f
-      internalID: -889418073
+      spriteID: 5b815ef366b0b9143829859b7c81aeb0
+      internalID: -1896917745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player1Attacking-Sheet_6
+      name: p1Idle_6
       rect:
         serializedVersion: 2
-        x: 6174
+        x: 4868
         y: 0
-        width: 722
-        height: 760
+        width: 735
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,41 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7fdc6c78fa47df4d9f6c5f3814df512
-      internalID: 1793990102
+      spriteID: d916a0f6766cdb2429c4020adacb7b6c
+      internalID: 1677988777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player1Attacking-Sheet_7
+      name: p1Idle_7
       rect:
         serializedVersion: 2
-        x: 6736
-        y: 275
-        width: 168
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7af7fdf8e5c9fe24eb23d6fd4bf39129
-      internalID: 844463847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player1Attacking-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 7215
+        x: 5678
         y: 0
-        width: 701
-        height: 760
+        width: 735
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11e43efde0dcc5a4596f68e8f08945b0
-      internalID: 1901506485
+      spriteID: 7a504884ab37b5d4faa812d87614a6ab
+      internalID: -854877027
       vertices: []
       indices: 
       edges: []
@@ -316,15 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player1Attacking-Sheet_0: -62349589
-      player1Attacking-Sheet_1: -1680948210
-      player1Attacking-Sheet_2: -417434695
-      player1Attacking-Sheet_3: 1307250431
-      player1Attacking-Sheet_4: 968008983
-      player1Attacking-Sheet_5: -889418073
-      player1Attacking-Sheet_6: 1793990102
-      player1Attacking-Sheet_7: 844463847
-      player1Attacking-Sheet_8: 1901506485
+      p1Idle_0: 3952612
+      p1Idle_1: -547748085
+      p1Idle_2: 339897292
+      p1Idle_3: 555518072
+      p1Idle_4: -1545728379
+      p1Idle_5: -1896917745
+      p1Idle_6: 1677988777
+      p1Idle_7: -854877027
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
