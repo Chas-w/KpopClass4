@@ -44,10 +44,7 @@
 
             float fractal_noise (float2 uv) {
                 float n = 0;
-                // fractal noise is created by adding together "octaves" of a noise
-                // an octave is another noise value that is half the amplitude and double the frequency of the previously added noise
-                // below the uv is multiplied by a value double the previous. multiplying the uv changes the "frequency" or scale of the noise becuase it scales the underlying grid that is used to create the value noise
-                // the noise result from each line is multiplied by a value half of the previous value to change the "amplitude" or intensity or just how much that noise contributes to the overall resulting fractal noise.
+                //fractal noise based shader
 
                 n  = (1 / 2.0)  * noise( uv * 1);
                 n += (1 / 4.0)  * noise( uv * 2); 
@@ -80,22 +77,22 @@
 
             float4 frag (Interpolators i) : SV_Target
             {   
-                // create a variable for our uvs
+                // var for uvs
                 float2 uv = i.uv;
 
-                // create a separate uv variable we'll use as our coordinates to sample noise
+                //separate uv variable to use as coordinates to sample noise
                 float2 nUV = uv * _scale;
 
                 // create discrete lines by rounding value
                 nUV.y = floor(nUV.y);
                 
-                // the x component we'll use to sample the noise will change over time
+                // the x component used to sample the noise will change over time
                 nUV.x = _Time.y * _speed;
 
                 // sample fractal noise using nUV
                 float fn = fractal_noise(nUV);
 
-                // modify the uvs we'll use to sample the texture using the fractal noise
+                // modify the uvs to sample the texture using the fractal noise
                 uv += float2(pow(fn, _contrast), 0);
 
                 // sample the texture

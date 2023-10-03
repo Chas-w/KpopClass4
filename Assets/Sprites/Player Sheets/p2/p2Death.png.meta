@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 2746c7cfe55547b47b8252019863c547
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player2Death-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 0
+        width: 764
+        height: 543
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91168e50708669b408193cba48791684
+      internalID: 887925270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 0
+        width: 666
+        height: 517
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b63867105aa284abd2c165ece81e08
+      internalID: -713823702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 3419
+        y: 0
+        width: 585
+        height: 456
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e4b5f244938cd4bb85dbf18e8832e0
+      internalID: -1479603413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 5299
+        y: 0
+        width: 703
+        height: 681
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14282c101d356d46b3dc3410f282eb6
+      internalID: 1806778433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 0
+        width: 607
+        height: 464
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126f1d9fcfb04e84da6b680492a9065e
+      internalID: -1024554279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 6298
+        y: 0
+        width: 703
+        height: 548
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8a543e1850f7c4ebbccb99eb8cf309
+      internalID: -1047531898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 4337
+        y: 0
+        width: 666
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3ced0a7cc01b9478aefb4368d734bc
+      internalID: 747990664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 7248
+        y: 0
+        width: 758
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c3233cb4471fe4581441e93034df8e
+      internalID: 1345030036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 8237
+        y: 0
+        width: 768
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f56ae783b354b244aa362dcd6ea22e2b
+      internalID: -448956772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 9236
+        y: 0
+        width: 768
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46034caa63f27584c9152a3fef08fc26
+      internalID: -678707440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player2Death-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 10156
+        y: 0
+        width: 844
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4238c2011c64e7b4586389aa0d58347a
+      internalID: -1986580268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      player2Death-Sheet_: -1024554279
+      player2Death-Sheet_0: 887925270
+      player2Death-Sheet_1: -713823702
+      player2Death-Sheet_10: -1986580268
+      player2Death-Sheet_11: 1398600025
+      player2Death-Sheet_12: 1802168153
+      player2Death-Sheet_13: 1389668486
+      player2Death-Sheet_14: -1950225980
+      player2Death-Sheet_15: -1757321061
+      player2Death-Sheet_16: 1072517674
+      player2Death-Sheet_17: 612261046
+      player2Death-Sheet_18: -1560311263
+      player2Death-Sheet_19: -923127653
+      player2Death-Sheet_2: -1479603413
+      player2Death-Sheet_20: -67525157
+      player2Death-Sheet_21: 1586528259
+      player2Death-Sheet_22: -204655956
+      player2Death-Sheet_23: 1091775687
+      player2Death-Sheet_24: 1152773155
+      player2Death-Sheet_25: -1484590157
+      player2Death-Sheet_26: -366737433
+      player2Death-Sheet_27: 233813639
+      player2Death-Sheet_28: 927026840
+      player2Death-Sheet_30: -1175222959
+      player2Death-Sheet_31: 1551437836
+      player2Death-Sheet_32: -996426331
+      player2Death-Sheet_34: -1833603607
+      player2Death-Sheet_35: 2107193152
+      player2Death-Sheet_36: -420821585
+      player2Death-Sheet_37: 1648882245
+      player2Death-Sheet_38: 1317834691
+      player2Death-Sheet_39: 1113919232
+      player2Death-Sheet_4: 747990664
+      player2Death-Sheet_40: -1682975554
+      player2Death-Sheet_41: 650283109
+      player2Death-Sheet_42: 492434292
+      player2Death-Sheet_43: 623129815
+      player2Death-Sheet_44: 680107594
+      player2Death-Sheet_45: 299593221
+      player2Death-Sheet_46: -1304796074
+      player2Death-Sheet_47: -408410175
+      player2Death-Sheet_49: -744949758
+      player2Death-Sheet_5: 1806778433
+      player2Death-Sheet_50: 1262901908
+      player2Death-Sheet_52: 1571837782
+      player2Death-Sheet_53: -362287791
+      player2Death-Sheet_54: -1197972863
+      player2Death-Sheet_55: -2136957921
+      player2Death-Sheet_56: -1759871815
+      player2Death-Sheet_57: -5642611
+      player2Death-Sheet_58: -2044573903
+      player2Death-Sheet_59: -663580482
+      player2Death-Sheet_6: -1047531898
+      player2Death-Sheet_7: 1345030036
+      player2Death-Sheet_8: -448956772
+      player2Death-Sheet_9: -678707440
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

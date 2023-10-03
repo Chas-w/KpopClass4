@@ -11,7 +11,6 @@ public class flashingText : MonoBehaviour
     [SerializeField] float Xamp;
     [SerializeField] float Yamp;
 
-    
     // Update is called once per frame
     void Update()
     {
@@ -33,26 +32,28 @@ public class flashingText : MonoBehaviour
             var verts = textInfo.meshInfo[charInfo.materialReferenceIndex].vertices;
 
             //for loop to get each 4 verts of each char
-            for (int j = 0; j < 4; ++j)
+            for (int x = 0; x < 4; ++x)
             {
-                var orig = verts[charInfo.vertexIndex + j];
+
+
+                var orig = verts[charInfo.vertexIndex + x];
                 //overrides og char location with new location
                 //using sin + cos causes it to oscilate and *time makes chars move over time
                 //create a wave effect w/ the text
                 Vector3 effect = new Vector3(Mathf.Cos(Time.time * Xamp + orig.y * 0.01f), Mathf.Sin(Time.time * Yamp + orig.x * 0.01f), 0);
 
                 //use effect
-                verts[charInfo.vertexIndex + j] = orig + effect;
+                verts[charInfo.vertexIndex + x] = orig + effect;
 
             }
             #endregion
             
             # region updating current text with created effect
-            for (int x = 0; x < textInfo.meshInfo.Length; ++x)
+            for (int y = 0; y < textInfo.meshInfo.Length; ++y)
             {
-                var meshInfo = textInfo.meshInfo[x];
+                var meshInfo = textInfo.meshInfo[y];
                 meshInfo.mesh.vertices = meshInfo.vertices;
-                textComponenet.UpdateGeometry(meshInfo.mesh, x);
+                textComponenet.UpdateGeometry(meshInfo.mesh, y);
 
             }
             #endregion
