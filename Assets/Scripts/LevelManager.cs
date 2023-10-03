@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 
     public float p1WinCount;
     public float p2WinCount;
-    public float sceneCount = 1;
+    //public float sceneCount = 1;
 
 
     // Start is called before the first frame update
@@ -46,30 +46,45 @@ public class LevelManager : MonoBehaviour
         if (levelTimer.currentTime <= 0 && p1Damage.damage > p2Damage.damage)
         {
             p2WinCount++;
-            sceneCount++;
+            //sceneCount++;
             levelTimer.currentTime = levelTimer.startTime;
             if (SceneManager.GetActiveScene().name == "inClassPlatformer") { SceneManager.LoadScene("LVL2"); }
-            else if (SceneManager.GetActiveScene().name == "LVL2") { SceneManager.LoadScene("LVL3"); }
+            if (SceneManager.GetActiveScene().name == "LVL2") { SceneManager.LoadScene("LVL3"); }
+            if (SceneManager.GetActiveScene().name == "LVL3") 
+            {
+                if (p1WinCount > p2WinCount)
+                {
+                    SceneManager.LoadScene("Player1WinEnd");
+                    Destroy(this);
+                }
+                else if (p1WinCount < p2WinCount)
+                {
+                    SceneManager.LoadScene("Player2WinEnd");
+                    Destroy(this);
+                }
+            }
         }
         else if (levelTimer.currentTime <= 0 && p1Damage.damage < p2Damage.damage)
         {
             p1WinCount++;
-            sceneCount++;
+            //sceneCount++;
             levelTimer.currentTime = levelTimer.startTime;
             Debug.Log(p1WinCount);
             if (SceneManager.GetActiveScene().name == "inClassPlatformer") {SceneManager.LoadScene("LVL2");}
-            else if (SceneManager.GetActiveScene().name == "LVL2") { SceneManager.LoadScene("LVL3"); }
-        } else if (SceneManager.GetActiveScene().name == "LVL3")
-        {
-            if (p1WinCount > p2WinCount)
+            if (SceneManager.GetActiveScene().name == "LVL2") { SceneManager.LoadScene("LVL3"); }
+            if (SceneManager.GetActiveScene().name == "LVL3")
             {
-                SceneManager.LoadScene("Player1WinEnd");
-                Destroy(this);
-            } else if (p1WinCount < p2WinCount)
-            {
-                SceneManager.LoadScene("Player2WinEnd");
-                Destroy(this);
+                if (p1WinCount > p2WinCount)
+                {
+                    SceneManager.LoadScene("Player1WinEnd");
+                    Destroy(this);
+                }
+                else if (p1WinCount < p2WinCount)
+                {
+                    SceneManager.LoadScene("Player2WinEnd");
+                    Destroy(this);
+                }
             }
-        }
+        } 
     }
 }
