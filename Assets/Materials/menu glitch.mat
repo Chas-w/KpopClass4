@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: columnGlitch
+  m_Name: menu glitch
   m_Shader: {fileID: 4800000, guid: 84d089e6b503e4b5193a0502142ee629, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,13 +21,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _tex:
-        m_Texture: {fileID: 2800000, guid: b9876e3d5fd7acb41a0e4f0db5407695, type: 3}
-        m_Scale: {x: 0.5, y: 0.5}
+        m_Texture: {fileID: 2800000, guid: f902714442e1520478b777817f4c90a9, type: 3}
+        m_Scale: {x: -0.12, y: 1}
         m_Offset: {x: 1.6, y: 0}
     m_Ints: []
     m_Floats:
-    - _contrast: 20.7
-    - _scale: 489
-    - _speed: 5.62
+    - _contrast: 17.4
+    - _scale: 602
+    - _speed: 7.37
     m_Colors: []
   m_BuildTextureStacks: []

@@ -266,7 +266,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bee349f45bc499241b09bd476584edd2, type: 2}
+  - {fileID: 2100000, guid: 21c43a327825a424794d7e899a7e6302, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -973,6 +973,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8678587518861016315, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016315, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016315, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016315, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016315, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016315, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016315, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016316, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6006feab1c678724094c2dad28f44631, type: 3}
+    - target: {fileID: 8678587518861016316, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016316, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678587518861016316, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8678587519501471761, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1075,25 +1119,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1315127206627160094, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315127206627160094, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.b
-      value: 0.25882354
+      value: 0.11320752
       objectReference: {fileID: 0}
     - target: {fileID: 1315127206627160094, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.g
-      value: 0.25490198
+      value: 0.11320752
       objectReference: {fileID: 0}
     - target: {fileID: 1315127206627160094, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.r
-      value: 0.24705884
+      value: 0.11320752
       objectReference: {fileID: 0}
     - target: {fileID: 1315127206627160094, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1315127206627160094, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4504607612111239819, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 18.828148
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504607612111239819, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0067
+      objectReference: {fileID: 0}
     - target: {fileID: 8939355997151552337, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Name
       value: Environment Folder
@@ -1144,15 +1200,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8939355997883626422, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.b
-      value: 0.25882354
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939355997883626422, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.g
-      value: 0.25490198
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939355997883626422, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.r
-      value: 0.24705884
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939355997883626422, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Enabled
@@ -1168,15 +1224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8939355998509133384, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.b
-      value: 0.25882354
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939355998509133384, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.g
-      value: 0.25490198
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939355998509133384, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Color.r
-      value: 0.24705884
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939355998509133384, guid: b109bdccca518ce41a45dc947342ccfb, type: 3}
       propertyPath: m_Enabled
