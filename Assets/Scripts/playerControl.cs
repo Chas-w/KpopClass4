@@ -25,7 +25,7 @@ public class playerControl : MonoBehaviour
 
     bool grounded = false;
     bool jump = false;
-    //bool hit;
+
 
     Rigidbody2D myBody;
     Animator myAnim;
@@ -61,34 +61,53 @@ public class playerControl : MonoBehaviour
         if (horizontalMove > 0f)
         {
             dirRight = true;
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(.2f, .2f, .2f);
         }
         else if (horizontalMove < 0f)
         {
             dirRight = false;
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-.2f, .2f, .2f);
         }
         if (horizontalMove == 0f)
         {
             if (player2Position.position.x > transform.position.x)
             {
                 dirRight = true;
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(.2f, .2f, .2f);
             }
             else if (player2Position.position.x < transform.position.x)
             {
                 dirRight = false;
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-.2f, .2f, .2f);
             }
         }
         #endregion
 
+        #region animations
         if (p2Attack.attacked == true)
         {
             myBody.AddForce(Vector2.up * bounceSpeed, ForceMode2D.Impulse);
 
             p2Attack.attacked = false;
         }
+
+        if (Input.GetButtonDown("Attack"))
+        {
+            myAnim.SetBool("attacking", true);
+        } 
+        if (Input.GetButtonUp("Attack"))
+        {
+            myAnim.SetBool("attacking", false);
+        }
+        if (Input.GetButtonDown("Block"))
+        {
+            myAnim.SetBool("blocking", true);
+        }
+        if (Input.GetButtonUp("Block"))
+        {
+            myAnim.SetBool("blocking", false);
+        }
+        #endregion
     }
 
     void FixedUpdate() //use fixed update for things that shouldn't fluxuate 

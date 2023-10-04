@@ -16,18 +16,19 @@ public class player2Control : MonoBehaviour
  
     float horizontalMove;
     float bounceSpeed = 10f;
+    float knockBack = 50f;
 
     bool grounded = false;
     bool jump = false;
     bool dirRight;
     //bool hit;
-
+    Animator myAnim;
     Rigidbody2D myBody;
     // Start is called before the first frame update
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>(); //assigns rigid body to this variable
-
+        myAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,30 +41,39 @@ public class player2Control : MonoBehaviour
         if (Input.GetButtonDown("Jump2") && grounded)
         {
             jump = true;
+            myAnim.SetBool("jumping", true);
         }
 
+        if (horizontalMove > 0.1f || horizontalMove < -0.1f)
+        {
+            myAnim.SetBool("running", true);
+        }
+        else
+        {
+            myAnim.SetBool("running", false);
+        }
 
         if (horizontalMove > 0f)
         {
             dirRight = true;
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(.2f, .2f, .2f);
         }
         else if (horizontalMove < 0f)
         {
             dirRight = false;
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-.2f, .2f, .2f);
         }
         if (horizontalMove == 0f)
         {
             if (player1Position.position.x > transform.position.x)
             {
                 dirRight = true;
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(.2f, .2f, .2f);
             }
             else if (player1Position.position.x < transform.position.x)
             {
                 dirRight = false;
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-.2f, .2f, .2f);
             }
         }
         #endregion
@@ -71,8 +81,33 @@ public class player2Control : MonoBehaviour
         if (p1Attack.attacked == true)
         {
             myBody.AddForce(Vector2.up * bounceSpeed, ForceMode2D.Impulse);
+            if (dirRight)
+            {
+                myBody.velocity = new Vector3(-knockBack, myBody.velocity.y, 0f);
+            }
+            if (!dirRight)
+            {
+                myBody.velocity = new Vector3(knockBack, myBody.velocity.y, 0f);
+            }
 
             p1Attack.attacked = false;
+        }
+
+        if (Input.GetButtonDown("Attack2"))
+        {
+            myAnim.SetBool("attacking", true);
+        }
+        if (Input.GetButtonUp("Attack2"))
+        {
+            myAnim.SetBool("attacking", false);
+        }
+        if (Input.GetButtonDown("Block2"))
+        {
+            myAnim.SetBool("blocking", true);
+        }
+        if (Input.GetButtonUp("Block2"))
+        {
+            myAnim.SetBool("blocking", false);
         }
     }
 
@@ -104,6 +139,7 @@ public class player2Control : MonoBehaviour
         if (hit.collider != null && hit.transform.tag == "Ground")
         {
             grounded = true;
+            myAnim.SetBool("jumping", false);
         }
         else
         {

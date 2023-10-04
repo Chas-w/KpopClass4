@@ -15,7 +15,6 @@ public class playerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     private void OnCollisionStay2D(Collision2D collision)

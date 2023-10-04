@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3294736995091535551}
   - component: {fileID: 745002742845903279}
   - component: {fileID: 4852024974547787002}
-  - component: {fileID: 7283509693204677789}
   - component: {fileID: 32659883417436741}
   - component: {fileID: 7573851147675678831}
   m_Layer: 2
@@ -33,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 5092173945963861054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.742527, y: -0.28233403, z: -0.040549435}
-  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.20000002, z: 0.8232359}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +103,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.6050282, y: -0.5523797}
+  m_Offset: {x: -0.94152045, y: -0.5685482}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -115,7 +114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.410942, y: 5.11975}
+  m_Size: {x: 4.9057107, y: 4.9580173}
   m_EdgeRadius: 0
 --- !u!50 &3294736995091535551
 Rigidbody2D:
@@ -180,32 +179,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &7283509693204677789
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5092173945963861054}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.6258731, y: -0.57322365}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.35, y: 6.404883}
-    newSize: {x: 0.66, y: 0.93}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.4109397, y: 5.119749}
-  m_EdgeRadius: 0
 --- !u!114 &32659883417436741
 MonoBehaviour:
   m_ObjectHideFlags: 0
