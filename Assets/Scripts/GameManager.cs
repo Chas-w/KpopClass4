@@ -9,4 +9,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("inClassPlatformer");
     }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene("Main");
+    }
 }

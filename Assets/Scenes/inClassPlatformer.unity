@@ -313,6 +313,11 @@ Transform:
   m_Father: {fileID: 1747789563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1562073427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8678587519853839284, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+  m_PrefabInstance: {fileID: 8678587519179138424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1747789562
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,9 +562,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3726425727373977117}
     - target: {fileID: 8939096007526194005, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
+      propertyPath: player1Icon
+      value: 
+      objectReference: {fileID: 1562073427}
+    - target: {fileID: 8939096007526194005, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
+      propertyPath: p1normalIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: ad0d68c03b0dbf6468501f8276b40d0a, type: 3}
+    - target: {fileID: 8939096007526194005, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
       propertyPath: player1Health
       value: 
       objectReference: {fileID: 3726425727373977118}
+    - target: {fileID: 8939096007526194005, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
+      propertyPath: p1takeDamageIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e03b61d44b2ff640b768475dfd46157, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
 --- !u!4 &3134094285687692888 stripped
@@ -722,9 +739,21 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 7573851147675678831, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
+      propertyPath: player2Icon
+      value: 
+      objectReference: {fileID: 8678587519179138425}
+    - target: {fileID: 7573851147675678831, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
+      propertyPath: p2normalIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 70b08fddfe428244097c66825b08bcf6, type: 3}
+    - target: {fileID: 7573851147675678831, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
       propertyPath: player2Health
       value: 
       objectReference: {fileID: 3134094285687692889}
+    - target: {fileID: 7573851147675678831, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
+      propertyPath: p2takeDamageIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e9c1ff24c64a5469a628b347cb1abb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
 --- !u!4 &3726425727373977117 stripped
@@ -905,7 +934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377945612481764640, guid: ceb518438bc2bac4ab54b842b4dbdd40, type: 3}
       propertyPath: orthographic size
-      value: 3.2404778
+      value: 3.2382429
       objectReference: {fileID: 0}
     - target: {fileID: 8377945612481764643, guid: ceb518438bc2bac4ab54b842b4dbdd40, type: 3}
       propertyPath: m_Name
@@ -1063,6 +1092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+--- !u!1 &8678587519179138425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8678587518861016314, guid: 6c5d88704624703429c6321651e0fd12, type: 3}
+  m_PrefabInstance: {fileID: 8678587519179138424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8939355996896880448
 PrefabInstance:
   m_ObjectHideFlags: 0

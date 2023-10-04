@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class playerAttack : MonoBehaviour
 {
     [SerializeField] player2Health player2Health;
     [SerializeField] int damage;
+    public GameObject player2Icon;
+    public Sprite p2normalIcon;
+    public Sprite p2takeDamageIcon;
 
     public bool attacked;
 
@@ -47,6 +51,7 @@ public class playerAttack : MonoBehaviour
         {
             player2Health.TakeDamage(damage);
             attacked = true;
+            player2Icon.GetComponent<UnityEngine.UI.Image>().sprite = p2takeDamageIcon;
         }
     }
 }

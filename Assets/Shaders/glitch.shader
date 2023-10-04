@@ -6,6 +6,7 @@
         _scale ("noise scale", Range(2, 800)) = 50
         _speed ("speed", Range(0, 10)) = 1
         _contrast ("contrast", Range(1, 30)) = 25
+        _tint("color tint", Color) = (0, 0, 0, 0)
     }
 
     SubShader
@@ -23,6 +24,7 @@
             float _scale;
             float _speed;
             float _contrast;
+            float3 _tint;
 
             float rand (float2 uv) {
                 return frac(sin(dot(uv.xy, float2(12.9898, 78.233))) * 43758.5453123);
@@ -97,6 +99,7 @@
 
                 // sample the texture
                 float3 color = tex2D(_tex, uv);
+                color *= _tint;
 
                 return float4(color, 1.0);
             }
