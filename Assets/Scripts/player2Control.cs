@@ -8,6 +8,11 @@ public class player2Control : MonoBehaviour
     [SerializeField] Transform player1Position;
     [SerializeField] playerAttack p1Attack;
 
+    [SerializeField] AudioSource attackAudio;
+    [SerializeField] AudioSource jumpAudio;
+    [SerializeField] AudioSource blockAudio;
+
+
     public float speed = 5f;
     public float castDist = 1f;
     public float jumpPower = 2f;
@@ -42,13 +47,13 @@ public class player2Control : MonoBehaviour
         {
             jump = true;
             myAnim.SetBool("jumping", true);
-            // SOUND CODE HERE
+            jumpAudio.Play(1);
         }
 
         if (horizontalMove > 0.1f || horizontalMove < -0.1f)
         {
             myAnim.SetBool("running", true);
-            // SOUND CODE HERE
+            
         }
         else
         {
@@ -98,7 +103,7 @@ public class player2Control : MonoBehaviour
         if (Input.GetButton("Attack2"))
         {
             myAnim.SetBool("attacking", true);
-            // SOUND CODE HERE
+            attackAudio.Play(1);
         }
         if (Input.GetButtonUp("Attack2"))
         {
@@ -107,7 +112,7 @@ public class player2Control : MonoBehaviour
         if (Input.GetButton("Block2"))
         {
             myAnim.SetBool("blocking", true);
-            // SOUND CODE HERE
+            blockAudio.Play(1);
         }
         if (Input.GetButtonUp("Block2"))
         {

@@ -11,6 +11,8 @@ public class playerAttack : MonoBehaviour
     public Sprite p2normalIcon;
     public Sprite p2takeDamageIcon;
 
+    
+
     public bool attacked;
 
     bool touching;
