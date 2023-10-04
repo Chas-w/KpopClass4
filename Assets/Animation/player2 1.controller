@@ -88,19 +88,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -2636457098334195698}
-    m_Position: {x: 210, y: 80, z: 0}
+    m_Position: {x: 170, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 988804380584545202}
-    m_Position: {x: 200, y: -40, z: 0}
+    m_Position: {x: 230, y: -190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3894287443405331643}
-    m_Position: {x: 630, y: -30, z: 0}
+    m_Position: {x: 700, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5053267174166342513}
-    m_Position: {x: 470, y: 90, z: 0}
+    m_Position: {x: 580, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8355520585630266165}
-    m_Position: {x: 450, y: 200, z: 0}
+    m_Position: {x: 450, y: 300, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -4806200506805810826}
@@ -109,8 +109,8 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 440, y: -100, z: 0}
-  m_EntryPosition: {x: 230, y: 140, z: 0}
+  m_AnyStatePosition: {x: 450, y: -120, z: 0}
+  m_EntryPosition: {x: 190, y: 270, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -2636457098334195698}
@@ -232,25 +232,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: blocking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: attacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: jumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
