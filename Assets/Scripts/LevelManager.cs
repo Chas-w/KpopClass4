@@ -55,12 +55,12 @@ public class LevelManager : MonoBehaviour
                 if (p1WinCount > p2WinCount)
                 {
                     SceneManager.LoadScene("Player1WinEnd");
-                    Destroy(this);
+                    Destroy(gameObject);
                 }
                 else if (p1WinCount < p2WinCount)
                 {
                     SceneManager.LoadScene("Player2WinEnd");
-                    Destroy(this);
+                    Destroy(gameObject);
                 }
             }
         }
@@ -77,12 +77,12 @@ public class LevelManager : MonoBehaviour
                 if (p1WinCount > p2WinCount)
                 {
                     SceneManager.LoadScene("Player1WinEnd");
-                    Destroy(this);
+                    Destroy(gameObject);
                 }
                 else if (p1WinCount < p2WinCount)
                 {
                     SceneManager.LoadScene("Player2WinEnd");
-                    Destroy(this);
+                    Destroy(gameObject);
                 }
             }
         } 

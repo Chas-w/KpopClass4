@@ -18,7 +18,8 @@ public class playerControl : MonoBehaviour
 
     float horizontalMove;
     float bounceSpeed = 10f;
-    //float knockBack = 5f; 
+    float attackTimerMax = 15f;
+    float attackTimer;
  
     //float hitCoolDownMax = 5f;
     //float hitCoolDown;
@@ -34,7 +35,7 @@ public class playerControl : MonoBehaviour
     {
         myBody = GetComponent<Rigidbody2D>(); //assigns rigid body to this variable
         myAnim = GetComponent<Animator>();
-
+        attackTimer = attackTimerMax;
         //hitCoolDown = hitCoolDownMax;
     }
 
@@ -46,13 +47,15 @@ public class playerControl : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded)
         {
             myAnim.SetBool("jumping", true);
-            jump = true; 
+            jump = true;
+            // SOUND CODE HERE
         }
 
         if (horizontalMove > 0.1f || horizontalMove < -0.1f)
         {
-            myAnim.SetBool("running", true); 
-        } 
+            myAnim.SetBool("running", true);
+            // SOUND CODE HERE
+        }
         else
         {
             myAnim.SetBool("running", false);
@@ -81,37 +84,40 @@ public class playerControl : MonoBehaviour
                 transform.localScale = new Vector3(-.2f, .2f, .2f);
             }
         }
-        #endregion
-
-        #region animations
+        
         if (p2Attack.attacked == true)
         {
             myBody.AddForce(Vector2.up * bounceSpeed, ForceMode2D.Impulse);
 
             p2Attack.attacked = false;
         }
+        #endregion
+    }
 
+    void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
+    {
+        #region animations
         if (Input.GetButtonDown("Attack"))
         {
             myAnim.SetBool("attacking", true);
-        } 
-        if (Input.GetButtonUp("Attack"))
+            // SOUND CODE HERE
+            attackTimer--;
+        }
+        if (attackTimer <= 0)
         {
             myAnim.SetBool("attacking", false);
+            attackTimer = attackTimerMax;
         }
-        if (Input.GetButtonDown("Block"))
+        if (Input.GetButton("Block"))
         {
             myAnim.SetBool("blocking", true);
+            // SOUND CODE HERE
         }
         if (Input.GetButtonUp("Block"))
         {
             myAnim.SetBool("blocking", false);
         }
         #endregion
-    }
-
-    void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
-    {
 
         #region movement
         moveSpeed = horizontalMove * speed;

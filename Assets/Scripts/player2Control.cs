@@ -42,11 +42,13 @@ public class player2Control : MonoBehaviour
         {
             jump = true;
             myAnim.SetBool("jumping", true);
+            // SOUND CODE HERE
         }
 
         if (horizontalMove > 0.1f || horizontalMove < -0.1f)
         {
             myAnim.SetBool("running", true);
+            // SOUND CODE HERE
         }
         else
         {
@@ -93,17 +95,19 @@ public class player2Control : MonoBehaviour
             p1Attack.attacked = false;
         }
 
-        if (Input.GetButtonDown("Attack2"))
+        if (Input.GetButton("Attack2"))
         {
             myAnim.SetBool("attacking", true);
+            // SOUND CODE HERE
         }
         if (Input.GetButtonUp("Attack2"))
         {
             myAnim.SetBool("attacking", false);
         }
-        if (Input.GetButtonDown("Block2"))
+        if (Input.GetButton("Block2"))
         {
             myAnim.SetBool("blocking", true);
+            // SOUND CODE HERE
         }
         if (Input.GetButtonUp("Block2"))
         {
