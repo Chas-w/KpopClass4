@@ -22,12 +22,12 @@ public class player2Control : MonoBehaviour
     float horizontalMove;
     float bounceSpeed = 10f;
     float knockBack = 50f;
-
+    float moveSpeed;
     bool grounded = false;
     bool jump = false;
     bool dirRight;
     //bool hit;
-    Animator myAnim;
+    public Animator myAnim;
     Rigidbody2D myBody;
     // Start is called before the first frame update
     void Start()
@@ -88,43 +88,35 @@ public class player2Control : MonoBehaviour
         if (p1Attack.attacked == true)
         {
             myBody.AddForce(Vector2.up * bounceSpeed, ForceMode2D.Impulse);
-            if (dirRight)
-            {
-                myBody.velocity = new Vector3(-knockBack, myBody.velocity.y, 0f);
-            }
-            if (!dirRight)
-            {
-                myBody.velocity = new Vector3(knockBack, myBody.velocity.y, 0f);
-            }
-
             p1Attack.attacked = false;
         }
-
-        if (Input.GetButton("Attack2"))
+        #region animation 
+        if (Input.GetButtonDown("Attack2"))
         {
             myAnim.SetBool("attacking", true);
             attackAudio.Play(1);
         }
-        if (Input.GetButtonUp("Attack2"))
+        if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("p2Attack"))
         {
             myAnim.SetBool("attacking", false);
         }
-        if (Input.GetButton("Block2"))
+        if (Input.GetButtonDown("Block2"))
         {
             myAnim.SetBool("blocking", true);
             blockAudio.Play(1);
         }
-        if (Input.GetButtonUp("Block2"))
+        if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("p2Block"))
         {
             myAnim.SetBool("blocking", false);
         }
+        #endregion
     }
 
     void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
     {
         
         #region movement
-        float moveSpeed = horizontalMove * speed;
+        moveSpeed = horizontalMove * speed;
 
         if (jump)
         {

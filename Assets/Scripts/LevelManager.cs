@@ -76,6 +76,7 @@ public class LevelManager : MonoBehaviour
             {
                 if (p1WinCount > p2WinCount)
                 {
+                    //p2.myAnim.SetBool("dying", true);
                     SceneManager.LoadScene("Player1WinEnd");
                     Destroy(gameObject);
                 }

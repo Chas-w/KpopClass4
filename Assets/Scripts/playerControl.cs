@@ -95,32 +95,33 @@ public class playerControl : MonoBehaviour
             p2Attack.attacked = false;
         }
         #endregion
-    }
 
-    void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
-    {
         #region animations
         if (Input.GetButtonDown("Attack"))
         {
             myAnim.SetBool("attacking", true);
             attackAudio.Play(1);
-            attackTimer--;
+           
         }
-        if (attackTimer <= 0)
+        if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("p1Attack"))
         {
             myAnim.SetBool("attacking", false);
-            attackTimer = attackTimerMax;
+            
         }
-        if (Input.GetButton("Block"))
+        if (Input.GetButtonDown("Block"))
         {
             myAnim.SetBool("blocking", true);
             blockAudio.Play(1);
         }
-        if (Input.GetButtonUp("Block"))
+        if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("p1Block"))
         {
             myAnim.SetBool("blocking", false);
         }
         #endregion
+    }
+
+    void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
+    {
 
         #region movement
         moveSpeed = horizontalMove * speed;
