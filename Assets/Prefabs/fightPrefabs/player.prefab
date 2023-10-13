@@ -12,10 +12,7 @@ GameObject:
   - component: {fileID: 8636146795113477665}
   - component: {fileID: 5930269935310165340}
   - component: {fileID: 3294736995091535551}
-  - component: {fileID: 745002742845903279}
   - component: {fileID: 4852024974547787002}
-  - component: {fileID: 32659883417436741}
-  - component: {fileID: 7573851147675678831}
   - component: {fileID: 5076645438353544900}
   - component: {fileID: 3726425727373977126}
   - component: {fileID: 3726425727373977127}
@@ -140,30 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &745002742845903279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5092173945963861054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afda28083a7a919409aacc674c36a092, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player2Position: {fileID: 0}
-  p2Attack: {fileID: 0}
-  attackAudio: {fileID: 5076645438353544900}
-  jumpAudio: {fileID: 3726425727373977127}
-  blockAudio: {fileID: 3726425727373977126}
-  speed: 5
-  castDist: 1
-  jumpPower: 12
-  gravScale: 5
-  gravFall: 10
-  moveSpeed: 0
-  dirRight: 0
 --- !u!95 &4852024974547787002
 Animator:
   serializedVersion: 5
@@ -185,38 +158,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &32659883417436741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5092173945963861054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 527a33acf04788d4596d0d555374c4ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  blocking: 0
---- !u!114 &7573851147675678831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5092173945963861054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4078639fc034e4caba312a83756d95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player2Health: {fileID: 0}
-  damage: 1
-  player2Icon: {fileID: 0}
-  p2normalIcon: {fileID: 21300000, guid: 70b08fddfe428244097c66825b08bcf6, type: 3}
-  p2takeDamageIcon: {fileID: 21300000, guid: 10e9c1ff24c64a5469a628b347cb1abb, type: 3}
-  attacked: 0
 --- !u!82 &5076645438353544900
 AudioSource:
   m_ObjectHideFlags: 0

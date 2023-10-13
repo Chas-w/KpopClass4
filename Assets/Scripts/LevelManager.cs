@@ -11,8 +11,8 @@ public class LevelManager : MonoBehaviour
     public GameObject p2;
 
     public timer levelTimer;
-    public playerHealth p1Damage;
-    public player2Health p2Damage;
+    //public playerHealth p1Damage;
+    //public player2Health p2Damage;
 
     public float p1WinCount;
     public float p2WinCount;
@@ -36,13 +36,16 @@ public class LevelManager : MonoBehaviour
         p2 = GameObject.Find("player2");
 
         levelTimer = UIManager.GetComponent<timer>();
+        /*
         p1Damage = p1.GetComponent<playerHealth>();
         p2Damage = p2.GetComponent<player2Health>();
+        */
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-       
+        /*
+        #region sceneManager
         if (levelTimer.currentTime <= 0 && p1Damage.damage > p2Damage.damage)
         {
             p2WinCount++;
@@ -86,6 +89,8 @@ public class LevelManager : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
-        } 
+        }
+        #endregion
+        */
     }
 }
