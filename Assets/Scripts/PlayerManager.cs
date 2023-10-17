@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Body")]
     [SerializeField] Transform middle;
+    [SerializeField] string facing;
+    [SerializeField] string previousFacing;
 
     [Header("World")]
     [SerializeField] float speed = 5f;
@@ -25,21 +28,36 @@ public class PlayerManager : MonoBehaviour
     public float health;
     public float wins;
     public bool dead;
+    public bool heavyAttacking;
+    public bool lightAttacking;
+    public bool touchingOpponent;
+
+    [Header("Outsider Components")]
+    public PlayerManager opponent;
+
+    [Header("Animation Control")]
+    public Animator animator;
+    public float attackAnimCountMax = 12f;
+    public string playerName;
 
     #region private vars
     float horizontalMove;
+    float heavyAttackDamage = 2f;
+    float lightAttackDamage = 1f;
+    float attackAnimCount;
 
     bool grounded = false;
     bool jump = false;
     bool stopMoveLeft;
     bool stopMoveRight; 
-
+    
     Rigidbody2D myBody;
     #endregion 
-
+  
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>(); //assigns rigid body to this variable
+        attackAnimCount = attackAnimCountMax;
     }
 
     void Update() //use update for things that need an instant response
@@ -47,20 +65,31 @@ public class PlayerManager : MonoBehaviour
         #region input
         if (Input.GetKey(left) && !stopMoveLeft)
         {
-            horizontalMove = -1; 
+            horizontalMove = -1;
+            animator.SetBool("running", true);
         } else if (Input.GetKey(right) && !stopMoveRight)
         {
-            horizontalMove = 1; 
+            horizontalMove = 1;
+            animator.SetBool("running", true);
         } else
         {
-            horizontalMove = 0; 
+            horizontalMove = 0;
+            animator.SetBool("running", false);
         }
 
         if (Input.GetKeyDown(up) && grounded && (!stopMoveLeft || !stopMoveRight))
         {
+            animator.SetTrigger("Jump");
             jump = true;
         }
+
+        if (Input.GetKeyDown(heavyAttack)) { animator.SetTrigger("Attack"); } 
+        
+       //if (Input.GetKeyDown(lightAttack) && attackAnimCount == attackAnimCountMax) { lightAttacking = true; }
         #endregion
+
+
+      
     }
 
     void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
@@ -101,6 +130,10 @@ public class PlayerManager : MonoBehaviour
         #endregion 
 
         myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f);
+        #endregion
+
+        #region attack animation
+       
         #endregion
     }
 

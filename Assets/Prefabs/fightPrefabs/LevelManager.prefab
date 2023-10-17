@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f8cc23da6d8ff489710228f9377627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIManager: {fileID: 0}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
   levelTimer: {fileID: 0}
-  p1Damage: {fileID: 0}
-  p2Damage: {fileID: 0}
-  consistant: {fileID: 9038794664605786855, guid: cac77867ca05bfe4095c08b9e9f66d1e, type: 3}
+  p1WinCount: 0
+  p2WinCount: 0
