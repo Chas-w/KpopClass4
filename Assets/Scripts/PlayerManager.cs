@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Transform middle;
     [SerializeField] string facing;
     [SerializeField] string previousFacing;
+    
 
     [Header("World")]
     [SerializeField] float speed = 5f;
@@ -25,8 +26,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float gravFall = 40f;
 
     [Header("Score Management")]
-    public float health;
+    public healthControl healthBar;
+    public int healthMax;
+    public int healthCurrent;
     public float wins;
+    public float attackRange = .5f;
     public bool dead;
     public bool heavyAttacking;
     public bool lightAttacking;
@@ -34,22 +38,24 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Outsider Components")]
     public PlayerManager opponent;
+    public Transform opponentPosition;
+    public string opponentTag;
+    public bool opponentColliding;
 
     [Header("Animation Control")]
     public Animator animator;
-    public float attackAnimCountMax = 12f;
-    public string playerName;
+   // public string playerName;
 
     #region private vars
     float horizontalMove;
-    float heavyAttackDamage = 2f;
-    float lightAttackDamage = 1f;
-    float attackAnimCount;
+    int heavyAttackDamage = 2;
+    int lightAttackDamage = 1;
+   
 
     bool grounded = false;
     bool jump = false;
     bool stopMoveLeft;
-    bool stopMoveRight; 
+    bool stopMoveRight;
     
     Rigidbody2D myBody;
     #endregion 
@@ -57,7 +63,8 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>(); //assigns rigid body to this variable
-        attackAnimCount = attackAnimCountMax;
+        healthCurrent = healthMax;
+        healthBar.SetMaxHealth(healthMax);
     }
 
     void Update() //use update for things that need an instant response
@@ -83,15 +90,36 @@ public class PlayerManager : MonoBehaviour
             jump = true;
         }
 
-        if (Input.GetKeyDown(heavyAttack)) { animator.SetTrigger("Attack"); } 
-        
-       //if (Input.GetKeyDown(lightAttack) && attackAnimCount == attackAnimCountMax) { lightAttacking = true; }
+        if (Input.GetKeyDown(heavyAttack)) 
+        { 
+            animator.SetTrigger("Attack"); 
+            if (opponent.opponentColliding)
+            {
+                opponent.healthCurrent-= heavyAttackDamage;
+                healthBar.SetHealth(healthCurrent);
+            }
+        }
+
+
+        //if (Input.GetKeyDown(lightAttack) && attackAnimCount == attackAnimCountMax) { lightAttacking = true; }
         #endregion
 
+        
+        
 
-      
+        #region sprite direction
+        if (horizontalMove > 0f)
+        {
+            transform.localScale = new Vector3(.2f, .2f, .2f);
+        }
+        else if (horizontalMove < 0f)
+        {
+            transform.localScale = new Vector3(-.2f, .2f, .2f);
+        }
+        #endregion
+
+    
     }
-
     void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
     {
         #region movement
@@ -131,10 +159,6 @@ public class PlayerManager : MonoBehaviour
 
         myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f);
         #endregion
-
-        #region attack animation
-       
-        #endregion
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -147,6 +171,13 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.tag == "BarrierRight")
         {
             stopMoveRight = true;
+        }
+        #endregion
+
+        #region opponent collisions
+        if (collision.gameObject.tag == opponentTag)
+        {
+            opponentColliding = true;
         }
         #endregion
     }
@@ -162,5 +193,13 @@ public class PlayerManager : MonoBehaviour
             stopMoveRight = false;
         }
         #endregion
+
+        #region opponent collisions
+        if (collision.gameObject.tag == opponentTag)
+        {
+            opponentColliding = false;
+        }
+        #endregion
     }
+
 }

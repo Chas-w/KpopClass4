@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3134094285687692897}
   - component: {fileID: 3134094285687692898}
   - component: {fileID: 6350611480096992485}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: player2
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -519,8 +519,10 @@ MonoBehaviour:
   left: 276
   up: 273
   lightAttack: 0
-  heavyAttack: 0
+  heavyAttack: 32
   middle: {fileID: 6950455445572446320}
+  facing: 
+  previousFacing: 
   speed: 5
   castDist: 1.25
   jumpPower: 11
@@ -528,7 +530,13 @@ MonoBehaviour:
   gravFall: 5
   health: 0
   wins: 0
+  attackRange: 0.5
   dead: 0
+  heavyAttacking: 0
+  lightAttacking: 0
+  touchingOpponent: 0
+  opponent: {fileID: 0}
+  animator: {fileID: 1931116339}
 --- !u!1 &5146925906610594228
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +597,7 @@ GameObject:
   - component: {fileID: 4206771352627117196}
   m_Layer: 2
   m_Name: swordCollider
-  m_TagString: Untagged
+  m_TagString: player2Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

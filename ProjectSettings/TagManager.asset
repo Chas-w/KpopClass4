@@ -9,6 +9,8 @@ TagManager:
   - BarrierLeft
   - BarrierRight
   - Player1
+  - player2Sword
+  - player1Sword
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player1
+  - Player2
   - 
   - 
   - 
