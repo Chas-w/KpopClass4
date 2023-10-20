@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] KeyCode heavyAttack;
 
     [Header("Body")]
+    [SerializeField] Transform playerView;
     [SerializeField] Transform middle;
     [SerializeField] string facing;
     [SerializeField] string previousFacing;
@@ -91,7 +92,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown(heavyAttack)) 
-        { 
+        {
             animator.SetTrigger("Attack"); 
             if (opponent.opponentColliding)
             {
@@ -110,11 +111,11 @@ public class PlayerManager : MonoBehaviour
         #region sprite direction
         if (horizontalMove > 0f)
         {
-            transform.localScale = new Vector3(.2f, .2f, .2f);
+            playerView.localScale = new Vector3(1f, 1f, 1f);
         }
         else if (horizontalMove < 0f)
         {
-            transform.localScale = new Vector3(-.2f, .2f, .2f);
+            playerView.localScale = new Vector3(-1f, 1f, 1f);
         }
         #endregion
 
