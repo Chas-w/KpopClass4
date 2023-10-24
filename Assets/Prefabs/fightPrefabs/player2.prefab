@@ -504,15 +504,18 @@ MonoBehaviour:
   lightAttack: 0
   heavyAttack: 110
   playerView: {fileID: 8650300902120471994}
-  middle: {fileID: 0}
+  middle: {fileID: 2280410981903994966}
   facing: 
   previousFacing: 
+  knockbackForce: 12
+  knockbackCounter: 0.5
+  knockbackTotalTime: 0.2
+  knockFromRight: 0
   speed: 5
   castDist: 1.25
   jumpPower: 11
   gravScale: 5
   gravFall: 5
-  healthBar: {fileID: 0}
   healthMax: 0
   healthCurrent: 0
   wins: 0

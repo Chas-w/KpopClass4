@@ -476,12 +476,15 @@ MonoBehaviour:
   middle: {fileID: 3967914097718173363}
   facing: 
   previousFacing: 
+  knockbackForce: 12
+  knockbackCounter: 0.5
+  knockbackTotalTime: 0.2
+  knockFromRight: 0
   speed: 5
   castDist: 1.25
   jumpPower: 11
   gravScale: 5
   gravFall: 5
-  healthBar: {fileID: 0}
   healthMax: 0
   healthCurrent: 0
   wins: 0

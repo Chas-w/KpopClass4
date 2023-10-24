@@ -7,16 +7,18 @@ using UnityEngine.XR;
 public class LevelManager : MonoBehaviour
 {
     public GameObject UIManager;
-    public GameObject p1;
-    public GameObject p2;
 
-    public timer levelTimer;
-    //public playerHealth p1Damage;
-    //public player2Health p2Damage;
-
+    [Header("player values")]
+    public GameObject player1;
+    public GameObject player2;
+    public PlayerManager p1Health;
+    public PlayerManager p2Health;
     public float p1WinCount;
     public float p2WinCount;
-    //public float sceneCount = 1;
+
+    [Header("world")]
+    public timer levelTimer;
+    public float sceneCount = 1;
 
 
     // Start is called before the first frame update
@@ -32,8 +34,10 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         UIManager = GameObject.Find("UI Manager");
-        p1 = GameObject.Find("player");
-        p2 = GameObject.Find("player2");
+        player1 = GameObject.Find("player");
+        player2 = GameObject.Find("player2");
+        p1Health = player1.GetComponent<PlayerManager>();
+        p2Health = player2.GetComponent<PlayerManager>();
 
         levelTimer = UIManager.GetComponent<timer>();
         /*
@@ -44,9 +48,9 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*
+        
         #region sceneManager
-        if (levelTimer.currentTime <= 0 && p1Damage.damage > p2Damage.damage)
+        if (levelTimer.currentTime <= 0 && p1Health.healthCurrent > p2Health.healthCurrent)
         {
             p2WinCount++;
             //sceneCount++;
@@ -67,7 +71,7 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
-        else if (levelTimer.currentTime <= 0 && p1Damage.damage < p2Damage.damage)
+        else if (levelTimer.currentTime <= 0 && p1Health.healthCurrent < p2Health.healthCurrent)
         {
             p1WinCount++;
             //sceneCount++;
@@ -91,6 +95,6 @@ public class LevelManager : MonoBehaviour
             }
         }
         #endregion
-        */
+        
     }
 }

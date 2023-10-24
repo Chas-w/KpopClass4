@@ -17,6 +17,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Transform middle;
     [SerializeField] string facing;
     [SerializeField] string previousFacing;
+    public float knockbackForce;
+    public float knockbackCounter;
+    public float knockbackTotalTime;
+    public bool knockFromRight;
     
 
     [Header("World")]
@@ -27,7 +31,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float gravFall = 40f;
 
     [Header("Score Management")]
-    public healthControl healthBar;
     public int healthMax;
     public int healthCurrent;
     public float wins;
@@ -65,8 +68,8 @@ public class PlayerManager : MonoBehaviour
     {
         myBody = GetComponent<Rigidbody2D>(); //assigns rigid body to this variable
         healthCurrent = healthMax;
-        healthBar.SetMaxHealth(healthMax);
-    }
+        
+}
 
     void Update() //use update for things that need an instant response
     {
@@ -93,20 +96,19 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(heavyAttack)) 
         {
-            animator.SetTrigger("Attack"); 
+            animator.SetTrigger("Attack");
             if (opponent.opponentColliding)
             {
-                opponent.healthCurrent-= heavyAttackDamage;
-                healthBar.SetHealth(healthCurrent);
+                heavyAttacking = true;
+                opponent.knockbackCounter = opponent.knockbackTotalTime;
+                opponent.healthCurrent -= heavyAttackDamage;
             }
-        }
+            else { heavyAttacking = false; }
+        } else { heavyAttacking = false;  }
 
 
         //if (Input.GetKeyDown(lightAttack) && attackAnimCount == attackAnimCountMax) { lightAttacking = true; }
         #endregion
-
-        
-        
 
         #region sprite direction
         if (horizontalMove > 0f)
@@ -124,6 +126,7 @@ public class PlayerManager : MonoBehaviour
     void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
     {
         #region movement
+
         float moveSpeed = horizontalMove * speed;
 
         #region jump
@@ -156,9 +159,24 @@ public class PlayerManager : MonoBehaviour
             grounded = false;
         }
 
+        #endregion
+
+        #region knock back
+        if (knockbackCounter < 0 && opponent.heavyAttacking == false) { myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f); }
+        else 
+        { 
+            if (knockFromRight)
+            {
+                myBody.velocity = new Vector3(-knockbackForce, 3f, 0f);
+            } 
+            if (!knockFromRight)
+            {
+                myBody.velocity = new Vector3(knockbackForce, 3f, 0f);
+            }
+            knockbackCounter -= Time.deltaTime;
+        }
         #endregion 
 
-        myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f);
         #endregion
     }
 
@@ -179,6 +197,8 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.tag == opponentTag)
         {
             opponentColliding = true;
+            if (collision.transform.position.x <= transform.position.x) { opponent.knockFromRight = true; }
+            if (collision.transform.position.x > transform.position.x) { opponent.knockFromRight = false; }
         }
         #endregion
     }
