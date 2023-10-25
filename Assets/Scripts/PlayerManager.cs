@@ -52,9 +52,8 @@ public class PlayerManager : MonoBehaviour
 
     #region private vars
     float horizontalMove;
-    int heavyAttackDamage = 2;
-    int lightAttackDamage = 1;
-   
+    float heavyAttackDamage = 2f;
+    
 
     bool grounded = false;
     bool jump = false;
@@ -162,7 +161,7 @@ public class PlayerManager : MonoBehaviour
         #endregion
 
         #region knock back
-        if (knockbackCounter < 0 && opponent.heavyAttacking == false) { myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f); }
+        if (knockbackCounter <= 0 && opponent.heavyAttacking == false) { myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f); }
         else 
         { 
             if (knockFromRight)
@@ -174,7 +173,7 @@ public class PlayerManager : MonoBehaviour
                 myBody.velocity = new Vector3(knockbackForce, 3f, 0f);
             }
             knockbackCounter -= Time.deltaTime;
-        }
+        } 
         #endregion 
 
         #endregion

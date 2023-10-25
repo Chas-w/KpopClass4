@@ -477,7 +477,7 @@ MonoBehaviour:
   facing: 
   previousFacing: 
   knockbackForce: 12
-  knockbackCounter: 0.5
+  knockbackCounter: 0
   knockbackTotalTime: 0.2
   knockFromRight: 0
   speed: 5
