@@ -282,6 +282,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1716881417}
     - target: {fileID: 3726425727373977118, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
+      propertyPath: healthMax
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726425727373977118, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
       propertyPath: opponentPosition
       value: 
       objectReference: {fileID: 1716881416}
@@ -940,6 +944,10 @@ PrefabInstance:
       propertyPath: opponent
       value: 
       objectReference: {fileID: 408509795}
+    - target: {fileID: 6350611480096992485, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
+      propertyPath: healthMax
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6350611480096992485, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
       propertyPath: opponentPosition
       value: 

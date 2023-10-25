@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
         #region sceneManager
         if (levelTimer.currentTime <= 0 && p1Health.healthCurrent > p2Health.healthCurrent)
         {
-            p2WinCount++;
+            p1WinCount++;
             //sceneCount++;
             levelTimer.currentTime = levelTimer.startTime;
             if (SceneManager.GetActiveScene().name == "inClassPlatformer") { SceneManager.LoadScene("LVL2"); }
@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
         }
         else if (levelTimer.currentTime <= 0 && p1Health.healthCurrent < p2Health.healthCurrent)
         {
-            p1WinCount++;
+            p2WinCount++;
             //sceneCount++;
             levelTimer.currentTime = levelTimer.startTime;
             Debug.Log(p1WinCount);

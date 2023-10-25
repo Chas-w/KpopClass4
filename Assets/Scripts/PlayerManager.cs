@@ -31,8 +31,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float gravFall = 40f;
 
     [Header("Score Management")]
-    public int healthMax;
-    public int healthCurrent;
+    public float healthMax;
+    public float healthCurrent;
     public float wins;
     public float attackRange = .5f;
     public bool dead;
