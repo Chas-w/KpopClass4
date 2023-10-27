@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
@@ -19,6 +20,12 @@ public class LevelManager : MonoBehaviour
     [Header("world")]
     public timer levelTimer;
     public float sceneCount = 1;
+    public float deathAnimTimer1;
+    public float deathAnimTimer2;
+    public bool levelDone;
+    [SerializeField] float deathAnimTimerMax;
+
+   
 
 
     // Start is called before the first frame update
@@ -28,7 +35,8 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
-
+        deathAnimTimer1 = deathAnimTimerMax;
+        deathAnimTimer2 = deathAnimTimerMax;
     }
 
     void Update()
@@ -50,47 +58,58 @@ public class LevelManager : MonoBehaviour
     {
         
         #region sceneManager
-        if (levelTimer.currentTime <= 0 && p1Health.healthCurrent > p2Health.healthCurrent)
+        if (levelTimer.currentTime <= 0 && p1Health.healthCurrent > p2Health.healthCurrent || p2Health.healthCurrent <= 0)
         {
-            p1WinCount++;
-            //sceneCount++;
-            levelTimer.currentTime = levelTimer.startTime;
-            if (SceneManager.GetActiveScene().name == "inClassPlatformer") { SceneManager.LoadScene("LVL2"); }
-            if (SceneManager.GetActiveScene().name == "LVL2") { SceneManager.LoadScene("LVL3"); }
-            if (SceneManager.GetActiveScene().name == "LVL3") 
+            p2Health.animator.SetTrigger("Death");
+            deathAnimTimer2--;
+            levelDone = true;
+            if (deathAnimTimer2 <= 0)
             {
-                if (p1WinCount > p2WinCount)
+                p1WinCount++;
+                //sceneCount++;
+                levelTimer.currentTime = levelTimer.startTime;
+                if (SceneManager.GetActiveScene().name == "inClassPlatformer") { deathAnimTimer2 = deathAnimTimerMax; SceneManager.LoadScene("LVL2"); levelDone = false; }
+                if (SceneManager.GetActiveScene().name == "LVL2") { deathAnimTimer2 = deathAnimTimerMax; SceneManager.LoadScene("LVL3"); levelDone = false; }
+                if (SceneManager.GetActiveScene().name == "LVL3")
                 {
-                    SceneManager.LoadScene("Player1WinEnd");
-                    Destroy(gameObject);
-                }
-                else if (p1WinCount < p2WinCount)
-                {
-                    SceneManager.LoadScene("Player2WinEnd");
-                    Destroy(gameObject);
+                    if (p1WinCount > p2WinCount)
+                    {
+                        SceneManager.LoadScene("Player1WinEnd");
+                        Destroy(gameObject);
+                    }
+                    else if (p1WinCount < p2WinCount)
+                    {
+                        SceneManager.LoadScene("Player2WinEnd");
+                        Destroy(gameObject);
+                    }
                 }
             }
         }
-        else if (levelTimer.currentTime <= 0 && p1Health.healthCurrent < p2Health.healthCurrent)
+        else if (levelTimer.currentTime <= 0 && p1Health.healthCurrent < p2Health.healthCurrent || p1Health.healthCurrent <= 0)
         {
-            p2WinCount++;
-            //sceneCount++;
-            levelTimer.currentTime = levelTimer.startTime;
-            Debug.Log(p1WinCount);
-            if (SceneManager.GetActiveScene().name == "inClassPlatformer") {SceneManager.LoadScene("LVL2");}
-            if (SceneManager.GetActiveScene().name == "LVL2") { SceneManager.LoadScene("LVL3"); }
-            if (SceneManager.GetActiveScene().name == "LVL3")
+            p1Health.animator.SetTrigger("Death");
+            deathAnimTimer1--;
+            if (deathAnimTimer1 <= 0)
             {
-                if (p1WinCount > p2WinCount)
+                p2WinCount++;
+                //sceneCount++;
+                levelTimer.currentTime = levelTimer.startTime;
+                Debug.Log(p1WinCount);
+                if (SceneManager.GetActiveScene().name == "inClassPlatformer") { deathAnimTimer1 = deathAnimTimerMax; SceneManager.LoadScene("LVL2"); levelDone = false; }
+                if (SceneManager.GetActiveScene().name == "LVL2") { deathAnimTimer1 = deathAnimTimerMax; SceneManager.LoadScene("LVL3"); levelDone = false; }
+                if (SceneManager.GetActiveScene().name == "LVL3")
                 {
-                    //p2.myAnim.SetBool("dying", true);
-                    SceneManager.LoadScene("Player1WinEnd");
-                    Destroy(gameObject);
-                }
-                else if (p1WinCount < p2WinCount)
-                {
-                    SceneManager.LoadScene("Player2WinEnd");
-                    Destroy(gameObject);
+                    if (p1WinCount > p2WinCount)
+                    {
+                        //p2.myAnim.SetBool("dying", true);
+                        SceneManager.LoadScene("Player1WinEnd");
+                        Destroy(gameObject);
+                    }
+                    else if (p1WinCount < p2WinCount)
+                    {
+                        SceneManager.LoadScene("Player2WinEnd");
+                        Destroy(gameObject);
+                    }
                 }
             }
         }

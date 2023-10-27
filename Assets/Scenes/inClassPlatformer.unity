@@ -642,6 +642,10 @@ PrefabInstance:
       propertyPath: opponentPosition
       value: 
       objectReference: {fileID: 3726425727373977117}
+    - target: {fileID: 8650300902120471994, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a60c906b61aed424eae9830a87ddb50c, type: 3}
 --- !u!4 &3134094285687692888 stripped
@@ -671,6 +675,18 @@ PrefabInstance:
       propertyPath: levelTimer
       value: 
       objectReference: {fileID: 1118173655}
+    - target: {fileID: 3367496815285858706, guid: 912f927e9c070194c9b7c5bc070b149a, type: 3}
+      propertyPath: deathAnimTimerMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367496815285858706, guid: 912f927e9c070194c9b7c5bc070b149a, type: 3}
+      propertyPath: deathAnimTimerMax1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367496815285858706, guid: 912f927e9c070194c9b7c5bc070b149a, type: 3}
+      propertyPath: deathAnimTimerMax2
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3367496815285858707, guid: 912f927e9c070194c9b7c5bc070b149a, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -728,6 +744,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 20615812, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1095625085716659996, guid: 708158e2f545edf4bab8a93c70d6b79b, type: 3}
       propertyPath: m_RootOrder
       value: 4

@@ -29,6 +29,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float jumpPower = 2f;
     [SerializeField] float gravScale = 5f;
     [SerializeField] float gravFall = 40f;
+    public GameObject LevelManager;
+    public LevelManager levelManager;
 
     [Header("Score Management")]
     public float healthMax;
@@ -67,44 +69,50 @@ public class PlayerManager : MonoBehaviour
     {
         myBody = GetComponent<Rigidbody2D>(); //assigns rigid body to this variable
         healthCurrent = healthMax;
-        
-}
+        LevelManager = GameObject.Find("LevelManager");
+        levelManager = LevelManager.GetComponent<LevelManager>();
+    }
 
     void Update() //use update for things that need an instant response
     {
         #region input
-        if (Input.GetKey(left) && !stopMoveLeft)
+        if (healthCurrent > 0 && levelManager.levelDone == false)
         {
-            horizontalMove = -1;
-            animator.SetBool("running", true);
-        } else if (Input.GetKey(right) && !stopMoveRight)
-        {
-            horizontalMove = 1;
-            animator.SetBool("running", true);
-        } else
-        {
-            horizontalMove = 0;
-            animator.SetBool("running", false);
-        }
-
-        if (Input.GetKeyDown(up) && grounded && (!stopMoveLeft || !stopMoveRight))
-        {
-            animator.SetTrigger("Jump");
-            jump = true;
-        }
-
-        if (Input.GetKeyDown(heavyAttack)) 
-        {
-            animator.SetTrigger("Attack");
-            if (opponent.opponentColliding)
+            if (Input.GetKey(left) && !stopMoveLeft)
             {
-                heavyAttacking = true;
-                opponent.knockbackCounter = opponent.knockbackTotalTime;
-                opponent.healthCurrent -= heavyAttackDamage;
+                horizontalMove = -1;
+                animator.SetBool("running", true);
+            }
+            else if (Input.GetKey(right) && !stopMoveRight)
+            {
+                horizontalMove = 1;
+                animator.SetBool("running", true);
+            }
+            else
+            {
+                horizontalMove = 0;
+                animator.SetBool("running", false);
+            }
+
+            if (Input.GetKeyDown(up) && grounded && (!stopMoveLeft || !stopMoveRight))
+            {
+                animator.SetTrigger("Jump");
+                jump = true;
+            }
+
+            if (Input.GetKeyDown(heavyAttack))
+            {
+                animator.SetTrigger("Attack");
+                if (opponent.opponentColliding)
+                {
+                    heavyAttacking = true;
+                    opponent.knockbackCounter = opponent.knockbackTotalTime;
+                    opponent.healthCurrent -= heavyAttackDamage;
+                }
+                else { heavyAttacking = false; }
             }
             else { heavyAttacking = false; }
-        } else { heavyAttacking = false;  }
-
+        }
 
         //if (Input.GetKeyDown(lightAttack) && attackAnimCount == attackAnimCountMax) { lightAttacking = true; }
         #endregion
@@ -120,10 +128,12 @@ public class PlayerManager : MonoBehaviour
         }
         #endregion
 
-    
+
     }
     void FixedUpdate() //use fixed update for things that shouldn't fluxuate 
     {
+        if (healthCurrent > 0 && levelManager.levelDone == false)
+        { 
         #region movement
 
         float moveSpeed = horizontalMove * speed;
@@ -162,21 +172,25 @@ public class PlayerManager : MonoBehaviour
 
         #region knock back
         if (knockbackCounter <= 0 && opponent.heavyAttacking == false) { myBody.velocity = new Vector3(moveSpeed, myBody.velocity.y, 0f); }
-        else 
-        { 
+        else
+        {
             if (knockFromRight)
             {
                 myBody.velocity = new Vector3(-knockbackForce, 3f, 0f);
-            } 
+            }
             if (!knockFromRight)
             {
                 myBody.velocity = new Vector3(knockbackForce, 3f, 0f);
             }
             knockbackCounter -= Time.deltaTime;
-        } 
-        #endregion 
+        }
+        #endregion
 
         #endregion
+        } else
+        {
+            myBody.velocity = new Vector3(0f, 0f, 0f);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
